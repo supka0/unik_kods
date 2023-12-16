@@ -1,0 +1,64 @@
+# код №1
+class Person:
+    def say_hello(self):
+        print("Hello")
+
+
+tom = Person()
+tom.say_hello()
+
+
+# код №2
+class Person:
+    def repeat(self, message):
+        print(message)
+
+
+tom = Person()
+tom.repeat(input())
+
+
+# код №3
+class Person:
+
+    def say(self, message):
+        print(message)
+
+    def say_hello(self):
+        self.say("Hello work")  # обращаемся к выше определенному методу say
+
+tom = Person()
+tom.say_hello()
+
+
+# код №4
+class Person:
+    def __init__(self, name):
+        self.name = name  # имя человека
+        self.age = 1  # возраст человека
+
+
+tom = Person("Tom")
+print(tom.name)
+tom.age = 31
+print(tom.age)
+
+
+# код №5
+class Person:
+
+    def __init__(self, name):
+        self.name = name  # имя человека
+        self.age = 1  # возраст человека
+
+    def display_info(self):
+        print(f"Name: {self.name}  Age: {self.age}")
+
+
+tom = Person("Tom")
+tom.age = 37
+tom.display_info()  # Name: Tom  Age: 37
+
+bob = Person("Bob")
+bob.age = 41
+bob.display_info()  # Name: Bob  Age: 41
