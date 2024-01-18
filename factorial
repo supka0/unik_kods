@@ -1,0 +1,45 @@
+import math , time
+n=100
+tic = time.perf_counter()
+
+fact=1
+for i in range(2,n+1):
+    fact=fact*i
+print(fact)
+
+
+toc = time.perf_counter()
+print("for")
+print(f"The calculation took {toc - tic:0.4f}Seconds")
+
+
+tic = time.perf_counter()
+print(math.factorial(n))
+toc = time.perf_counter()
+print("math.factorial")
+print(f"The calculation took {toc - tic:0.4f}Seconds")
+
+
+tic = time.perf_counter()
+def factorial_recursive(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial_recursive(n-1)
+factorial_recursive(n)
+toc = time.perf_counter()
+print("def")
+print(f"The calculation took {toc - tic:0.4f}Seconds")
+
+
+
+tic = time.perf_counter()
+factorial = 1
+while n > 1:
+    factorial *= n
+    n -= 1
+
+print(factorial)
+toc = time.perf_counter()
+print("while")
+print(f"The calculation took {toc - tic:0.4f}Seconds")
